@@ -51,9 +51,9 @@ def linear_search(sequential_data, number):
 def pattern_search(dna_sequence, pattern):
     idx = 0
     index = set()
-    while idx < len(dna_sequence):
+    while idx < len(dna_sequence) - len(pattern):
         if dna_sequence[idx:idx+len(pattern)] == pattern:
-            index.add(idx+1)
+            index.add(idx)
         idx = idx + 1
     return index
 
