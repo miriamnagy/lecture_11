@@ -48,6 +48,16 @@ def linear_search(sequential_data, number):
     return{"positions": index, "count": count}
 
 
+def pattern_search(dna_sequence, pattern):
+    idx = 0
+    index = set()
+    while idx < len(dna_sequence):
+        if dna_sequence[idx:idx+len(pattern)] == pattern:
+            index.add(idx+1)
+        idx = idx + 1
+    return index
+
+
 
 
 
@@ -57,6 +67,9 @@ def main():
     print(sequential_data)
     result = linear_search(sequential_data, my_number)
     print(result)
+    dna_sequence = read_data("sequential.json", "dna_sequence")
+    dna_search = pattern_search(dna_sequence, "ATA")
+    print(dna_search)
 
 
 
