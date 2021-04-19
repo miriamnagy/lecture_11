@@ -52,7 +52,14 @@ def pattern_search(dna_sequence, pattern):
     idx = 0
     index = set()
     while idx < len(dna_sequence) - len(pattern):
-        if dna_sequence[idx:idx+len(pattern)] == pattern:
+        my_index = 0
+        while my_index < len(pattern):
+            if dna_sequence[idx + my_index] == pattern[my_index]:
+                my_index = my_index + 1
+            else:
+                break
+        else:
+
             index.add(idx)
         idx = idx + 1
     return index
